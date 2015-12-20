@@ -60,11 +60,40 @@ namespace UpgradeYourself.Windows.Pages
                 return;
             }
 
+            bool isValid = Validate(this.tbUsername.Text, this.tbPass.Password, this.tbConfirmPass.Password);
+
             bool isRegistered = await ViewModel.Register();
-            if (isRegistered)
+            if (isRegistered && isValid)
             {
                 this.Frame.Navigate(typeof(SkillsPage));
             }
+        }
+
+        private bool Validate(string text, string password1, string password2)
+        {
+            this.UsernameCheck.Visibility = Visibility.Collapsed;
+            this.PassCheck.Visibility = Visibility.Collapsed;
+            this.ConfirmPassCheck.Visibility = Visibility.Collapsed;
+
+            if (text.Length < 3 || text.Length > 20)
+            {
+                this.UsernameCheck.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            if (password1.Length < 3 || password1.Length > 20)
+            {
+                this.PassCheck.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            if (password1 != password2)
+            {
+                this.ConfirmPassCheck.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -112,7 +112,7 @@ namespace UpgradeYourself.Windows.Pages
         private void Hide()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 2);
+            timer.Interval = new TimeSpan(0, 0, 4);
             timer.Tick += Timer_Tick;
             timer.Start();
         }

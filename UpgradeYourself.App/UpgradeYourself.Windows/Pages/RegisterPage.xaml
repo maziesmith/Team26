@@ -27,14 +27,17 @@
             <StackPanel x:Name="ContentRoot" Grid.Row="1" Grid.Column="0">
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="Username"  Style="{StaticResource TextBlockIdentityStyle}" />
-                    <TextBox Text="{Binding Username, Mode=TwoWay}" Style="{StaticResource TextBoxIdentityStyle}" />
+                    <TextBox Name="tbUsername" Text="{Binding Username, Mode=TwoWay}" Style="{StaticResource TextBoxIdentityStyle}" />
+                    <TextBlock Name="UsernameCheck" Text="Username should ne between 3 and 20 characters!" Visibility="Collapsed" Style="{StaticResource TextBlockIdentityValidationMessage}" />
 
                     <TextBlock Text="Password"  Style="{StaticResource TextBlockIdentityStyle}" />
-                    <PasswordBox Password="{Binding Password, Mode=TwoWay}" Style="{StaticResource PasswordBoxIdentityStyle}" />
-
+                    <PasswordBox Name="tbPass" Password="{Binding Password, Mode=TwoWay}"  Style="{StaticResource PasswordBoxIdentityStyle}" />
+                    <TextBlock Name="PassCheck" Text="Password should ne between 3 and 20 characters!" Visibility="Collapsed" Style="{StaticResource TextBlockIdentityValidationMessage}"/>
+                    
                     <TextBlock Text="Confirm Password"  Style="{StaticResource TextBlockIdentityStyle}" />
-                    <PasswordBox Password="{Binding ConfirmPassword, Mode=TwoWay}" Style="{StaticResource PasswordBoxIdentityStyle}" />
-
+                    <PasswordBox Name="tbConfirmPass" Password="{Binding ConfirmPassword, Mode=TwoWay}" Style="{StaticResource PasswordBoxIdentityStyle}" />
+                    <TextBlock Name="ConfirmPassCheck" Text="Password and Confirm Password should be equal!" Visibility="Collapsed" Style="{StaticResource TextBlockIdentityValidationMessage}"/>
+                    
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <Grid Width="250" VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>

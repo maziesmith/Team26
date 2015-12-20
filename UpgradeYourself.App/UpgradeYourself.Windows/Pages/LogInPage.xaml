@@ -38,10 +38,15 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Button Margin="10" HorizontalAlignment="Center" Content="Log In" Style="{StaticResource ButtonMainStyle}" Click="OnLoginButtonClick" />
-                            <TextBlock Grid.Row="1" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Don't have an account yet?"/>
-                            <HyperlinkButton Grid.Row="2" HorizontalAlignment="Center" Command="{Binding GoToRegisterCommand}" Content="Register"/>
+                            <Button Grid.Row="0" Margin="10" HorizontalAlignment="Center" Content="Log In" Style="{StaticResource ButtonMainStyle}" Click="OnLoginButtonClick" />
+                            <TextBlock Grid.Row="1" Name="LoginFailed" Text="Username or Password incorrect!" 
+                                       HorizontalAlignment="Center" TextAlignment="Center" 
+                                       Visibility="Collapsed" Foreground="Red"
+                                       Margin="10"/>
+                            <TextBlock Grid.Row="2" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Don't have an account yet?"/>
+                            <HyperlinkButton Grid.Row="3" HorizontalAlignment="Center" Command="{Binding GoToRegisterCommand}" Content="Register"/>
                         </Grid>
                     </StackPanel>
                 </StackPanel>

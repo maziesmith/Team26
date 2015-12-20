@@ -70,6 +70,11 @@ namespace UpgradeYourself.Windows.Pages
             {
                 this.Frame.Navigate(typeof(SkillsPage));
             }
+            else
+            {
+                this.LoginFailed.Visibility = Visibility.Visible;
+            }
+            
         }
     }
 }
