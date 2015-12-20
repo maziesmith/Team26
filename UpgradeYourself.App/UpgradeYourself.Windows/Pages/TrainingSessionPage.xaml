@@ -40,8 +40,9 @@
                         <ItemsWrapGrid MaximumRowsOrColumns="1" />
                     </ItemsPanelTemplate>
                 </GridView>
-                <TextBlock Name="Hint" Text="Think about..." Visibility="Collapsed" HorizontalAlignment="Center"
-                           TextAlignment="Center" Width="250"
+                <TextBlock Name="Hint" Text="{Binding CurrentQuestion.Hint}" 
+                           Visibility="Collapsed" HorizontalAlignment="Center"
+                           TextAlignment="Center" TextWrapping="Wrap" Width="250"
                            Holding="Hint_Holding"/>
                 <TextBlock Name="AnswerStatusCorrect"  
                            Visibility="Collapsed"

@@ -47,6 +47,8 @@
 
         public int Difficulty { get; set; }
 
+        public string Hint { get; set; }
+
         public ICollection<AnswerViewModel> Answers
         {
             get

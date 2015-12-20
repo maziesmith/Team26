@@ -60,7 +60,7 @@ namespace UpgradeYourself.Windows.Pages
                 this.TextBlockNoAvailableTrainings.Visibility = Visibility.Visible;
                 return;
             }
-
+            
             this.ViewModel.Questions = questions;
             this.ViewModel.CurrentIndex = 0;
             //this.ViewModel.CurrentQuestion = this.ViewModel.Questions[0];
@@ -112,7 +112,7 @@ namespace UpgradeYourself.Windows.Pages
         private void Hide()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 3);
+            timer.Interval = new TimeSpan(0, 0, 2);
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -121,6 +121,7 @@ namespace UpgradeYourself.Windows.Pages
         {
             AnswerStatusWrong.Visibility = Visibility.Collapsed;
             AnswerStatusCorrect.Visibility = Visibility.Collapsed;
+            Hint.Visibility = Visibility.Collapsed;
         }
 
         private IList<QuestionViewModel> GetQuestions(string skillName, int level)
@@ -132,8 +133,9 @@ namespace UpgradeYourself.Windows.Pages
         }
 
         private void Question_Holding(object sender, HoldingRoutedEventArgs e)
-        {
+        {        
             this.Hint.Visibility = Visibility.Visible;
+            Hide();
         }
 
         private void Hint_Holding(object sender, HoldingRoutedEventArgs e)

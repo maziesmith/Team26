@@ -77,6 +77,7 @@
                 Skill = q["Category"].ToString(),
                 Content = q["Content"].ToString(),
                 Difficulty = q["Difficulty"].Value<int>(),
+                Hint = q["Hint"].ToString(), 
                 Answers = q["Answers"].Select(a => new AnswerViewModel
                 {
                     Content = a["Content"].ToString(),
