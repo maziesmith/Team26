@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="UpgradeYourself.Windows.Pages.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UpgradeYourself.Windows.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:UpgradeYourself.Windows.Views"
+    mc:Ignorable="d">
+    <ScrollViewer Grid.Row="1" Grid.Column="0">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+          VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Page header -->
+            <views:PageHeader PageTitleText="Register" Grid.Row="0" Grid.Column="0"></views:PageHeader>
+
+            <!-- Page content -->
+            <StackPanel x:Name="ContentRoot" Grid.Row="1" Grid.Column="0">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Username"  Style="{StaticResource TextBlockIdentityStyle}" />
+                    <TextBox Text="{Binding Username, Mode=TwoWay}" Style="{StaticResource TextBoxIdentityStyle}" />
+
+                    <TextBlock Text="Password"  Style="{StaticResource TextBlockIdentityStyle}" />
+                    <PasswordBox Password="{Binding Password, Mode=TwoWay}" Style="{StaticResource PasswordBoxIdentityStyle}" />
+
+                    <TextBlock Text="Confirm Password"  Style="{StaticResource TextBlockIdentityStyle}" />
+                    <PasswordBox Password="{Binding ConfirmPassword, Mode=TwoWay}" Style="{StaticResource PasswordBoxIdentityStyle}" />
+
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Grid Width="250" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Margin="0, 20" HorizontalAlignment="Center" Content="Register" Style="{StaticResource ButtonMainStyle}" Click="OnRegisterButtonClick" />
+                            <TextBlock Grid.Row="1" Margin="0,5" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Already have an account? "/>
+                            <HyperlinkButton Grid.Row="2" HorizontalAlignment="Center" Command="{Binding GoToLogInCommand}" Content="Log in"/>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
