@@ -11,21 +11,40 @@
 
     <Grid Height="40">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <!-- Back button and page title -->
+        <!-- Back button  
         <Button Grid.Column="0" x:Name="backButton" Margin="0,0,0,0" Command="{Binding SystemNavigationManager.BackRequested, ElementName=pageRoot}"
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
-        <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource TextBlockMainHeaderStyle}" FontSize="16" Grid.Column="1"
+                        AutomationProperties.ItemType="Navigation Button"/>-->
+        <SplitView Grid.Column="0" x:Name="NavSplitView" DisplayMode="CompactOverlay" IsPaneOpen="False"
+                   CompactPaneLength="50" OpenPaneLength="150" >
+            <SplitView.Pane>
+                <StackPanel Background="Black" Orientation="Horizontal">
+                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click" FontSize="20"/>
+
+                    <Button x:Name="ProfileBtn" FontFamily="Segoe MDL2 Assets" Content="&#xe125;"
+                   Width="50" Height="50" Background="Transparent" Foreground="White" FontSize="20" Click="ProfileBtn_Click"/>
+
+                    <Button x:Name="HomeBtn" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" 
+                       Width="50" Height="50" Background="Transparent" Foreground="White" FontSize="20" Click="HomeBtn_Click"/>
+                </StackPanel>
+            </SplitView.Pane>
+            <!--<SplitView.Content>
+                <Grid>
+                    <TextBlock Text="" Foreground="White"></TextBlock>
+                </Grid>
+            </SplitView.Content>-->
+        </SplitView>
+        <TextBlock Grid.Column="1" x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource TextBlockMainHeaderStyle}" FontSize="16" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
         <Button Grid.Column="2" Name="RemiderButton"  HorizontalAlignment="Right" Click="OnReminderButtonClicked"></Button>
-        <HyperlinkButton  Grid.Column="3" Content="Log out" HorizontalAlignment="Right" Margin="0,0,10,0" Click="OnLogOutButtonClick"></HyperlinkButton>
+        <!--<HyperlinkButton  Grid.Column="3" Content="Log out" HorizontalAlignment="Right" Margin="0,0,10,0" Click="OnLogOutButtonClick"></HyperlinkButton>-->
     </Grid>
 </UserControl>

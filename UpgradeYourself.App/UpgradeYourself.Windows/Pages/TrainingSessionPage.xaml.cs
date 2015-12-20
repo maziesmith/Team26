@@ -104,25 +104,12 @@ namespace UpgradeYourself.Windows.Pages
                 // TODO: save points in user profile
                 // navigate to user profile?
                 // add skill summary page into database - update level and points
-                this.Frame.Navigate(typeof(TrainingSessionSummaryPage), 
+                this.Frame.Navigate(typeof(TrainingSessionSummaryPage),
                     new TrainingSessionSummaryViewModel { Skill = this.ViewModel.Skill, Level = this.ViewModel.Level, Points = this.ViewModel.Points });
             }
         }
 
-        private void Hide()
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 4);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, object e)
-        {
-            AnswerStatusWrong.Visibility = Visibility.Collapsed;
-            AnswerStatusCorrect.Visibility = Visibility.Collapsed;
-            Hint.Visibility = Visibility.Collapsed;
-        }
+        
 
         private IList<QuestionViewModel> GetQuestions(string skillName, int level)
         {
@@ -141,6 +128,21 @@ namespace UpgradeYourself.Windows.Pages
         private void Hint_Holding(object sender, HoldingRoutedEventArgs e)
         {
             this.Hint.Visibility = Visibility.Collapsed;
+        }
+
+        private void Hide()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 0, 100);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            AnswerStatusWrong.Visibility = Visibility.Collapsed;
+            AnswerStatusCorrect.Visibility = Visibility.Collapsed;
+            Hint.Visibility = Visibility.Collapsed;           
         }
     }
 }

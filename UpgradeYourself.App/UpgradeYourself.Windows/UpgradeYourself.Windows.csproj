@@ -100,6 +100,8 @@
     </Compile>
     <Compile Include="Common\DelegateCommand.cs" />
     <Compile Include="DataModels\SkillLevelDataModel.cs" />
+    <Compile Include="NavPane\NavMenuItem.cs" />
+    <Compile Include="NavPane\NavMenuListView.cs" />
     <Compile Include="Pages\LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>

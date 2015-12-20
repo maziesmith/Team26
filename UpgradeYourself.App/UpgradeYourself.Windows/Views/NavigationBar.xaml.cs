@@ -54,5 +54,19 @@ namespace UpgradeYourself.Windows.Views
             var stn = new ScheduledToastNotification(template, date);
             notifier.AddToSchedule(stn);
         }
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavSplitView.IsPaneOpen = !NavSplitView.IsPaneOpen;
+        }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            (Window.Current.Content as Frame).Navigate(typeof(UserProfilePage));
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            (Window.Current.Content as Frame).Navigate(typeof(SkillsPage));
+        }
     }
 }
