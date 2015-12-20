@@ -20,6 +20,7 @@
                     Content = q.Content,
                     Category = q.Category.Name.ToString(),
                     Difficulty = q.Difficulty,
+                    Hint = q.Hint,
                     Answers = q.Answers.AsQueryable()
                     .Select(AnswerViewModel.FromAnswer)
                     .ToList()
@@ -38,6 +39,8 @@
         
         [Required]
         public int Difficulty { get; set; }
+
+        public string Hint { get; set; }
 
         public virtual ICollection<AnswerViewModel> Answers { get; set; }
     }

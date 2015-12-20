@@ -26,6 +26,8 @@ namespace UpgradeYourself.Models
         [Required]
         public int Difficulty { get; set; }
 
+        public string Hint { get; set; }
+
         public virtual ICollection<Answer> Answers
         {
             get

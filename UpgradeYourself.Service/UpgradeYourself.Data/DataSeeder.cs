@@ -62,6 +62,7 @@
                     CategoryId = 1,
                     Content = "What is the correct syntax for referring to an external script called \"xxx.js\"?",
                     Difficulty = 1,
+                    Hint = "Think about it as a source of additional content or functionality.",
                     Answers = new List<Answer>
                     {
                             new Answer()
@@ -87,6 +88,7 @@
                     CategoryId = 1,
                     Content = "How do you write \"Hello World\" in an alert box?",
                     Difficulty = 2,
+                    Hint = "It i sa box, but is this the important part?",
                     Answers = new List<Answer>
                     {
                         new Answer()
@@ -111,6 +113,7 @@
                     CategoryId = 1,
                     Content = "What is the correct syntax for referring to an external script called \"xxx.js\"?",
                     Difficulty = 2,
+                    Hint = "Think about it as a source of additional content or functionality.",
                     Answers = new List<Answer>
                     {
                             new Answer()
@@ -136,6 +139,7 @@
                     CategoryId = 1,
                     Content = "How do you write \"Hello World\" in an alert box?",
                     Difficulty = 1,
+                    Hint = "It i sa box, but is this the important part?",
                     Answers = new List<Answer>
                     {
                         new Answer()
